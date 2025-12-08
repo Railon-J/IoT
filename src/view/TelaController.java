@@ -39,7 +39,7 @@ public class TelaController {
             
             return true;
         } else {
-                deconectar();    
+                desconectar();    
                 conectar();
             System.out.println("Falha ao abrir porta.");
             lblStatus.setText("Falha ao abrir porta.");
@@ -69,7 +69,7 @@ public class TelaController {
                     new Thread(this::receberDados).start();
                 }
             } else {
-                deconectar();
+                desconectar();
                 btnConectar.setText("Conectar");
                 lblStatus.setText("Arduino Desconectado");
             }
@@ -119,7 +119,7 @@ public class TelaController {
         }
     }
 
-    public void deconectar() {// desconecta porta serial
+    public void desconectar() {// desconecta porta serial
         try {
             if (entrada != null) entrada.close();
             if (saida != null) saida.close();
